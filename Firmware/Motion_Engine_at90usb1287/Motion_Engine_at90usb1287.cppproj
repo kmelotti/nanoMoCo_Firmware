@@ -18,8 +18,7 @@
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
-    <OverrideVtorValue>
-    </OverrideVtorValue>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <ProgFlashFromRam>true</ProgFlashFromRam>
     <RamSnippetAddress>0x20000000</RamSnippetAddress>
@@ -27,13 +26,14 @@
     <UncachedRange />
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
-      <framework-data xmlns="">
+      <framework-data>
         <options />
         <configurations />
         <files />
         <documentation help="" />
+        <offline-documentation help="" />
         <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.7.2" />
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
@@ -48,6 +48,22 @@
         <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
         <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
         <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_AT90usb1287__</Value>
+            <Value>__AVR_AT90USB1287__</Value>
+            <Value>ARCH=ARCH_AVR8</Value>
+            <Value>USE_FLASH_DESCRIPTORS</Value>
+            <Value>F_USB=16000000L</Value>
+            <Value>USE_USB_SERIAL</Value>
+            <Value>BOARD=NONE</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
         <avrgcc.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\DynamicPerception\avr\cores\AT90USB</Value>
@@ -122,22 +138,6 @@
         <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
         <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
         <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-        <avrgcc.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_AT90usb1287__</Value>
-            <Value>__AVR_AT90USB1287__</Value>
-            <Value>ARCH=ARCH_AVR8</Value>
-            <Value>USE_FLASH_DESCRIPTORS</Value>
-            <Value>F_USB=16000000L</Value>
-            <Value>USE_USB_SERIAL</Value>
-            <Value>BOARD=NONE</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcc.compiler.symbols.DefSymbols>
       </AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
@@ -151,6 +151,22 @@
         <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
         <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
         <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_AT90usb1287__</Value>
+            <Value>__AVR_AT90USB1287__</Value>
+            <Value>ARCH=ARCH_AVR8</Value>
+            <Value>USE_FLASH_DESCRIPTORS</Value>
+            <Value>F_USB=16000000L</Value>
+            <Value>USE_USB_SERIAL</Value>
+            <Value>BOARD=NONE</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
         <avrgcc.compiler.directories.IncludePaths>
           <ListValues>
             <Value>C:\Program Files (x86)\Arduino\hardware\DynamicPerception\avr\cores\AT90USB</Value>
@@ -225,40 +241,46 @@
         <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
         <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
         <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-        <avrgcc.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_AT90usb1287__</Value>
-            <Value>__AVR_AT90USB1287__</Value>
-            <Value>ARCH=ARCH_AVR8</Value>
-            <Value>USE_FLASH_DESCRIPTORS</Value>
-            <Value>F_USB=16000000L</Value>
-            <Value>USE_USB_SERIAL</Value>
-            <Value>BOARD=NONE</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcc.compiler.symbols.DefSymbols>
       </AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Visual Micro\.Motion_Engine_at90usb1287.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="Motion_Engine_at90usb1287.ino">
       <SubType>compile</SubType>
     </None>
     <None Include="OM_Camera_Control.ino">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="OM_ControlCycle.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_Debug.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_DevAddr.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_EEPROM.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_LimitHandler.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_Motor_Control.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_Motor_Travel.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OM_Serial_Com_Client.ino">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Visual Micro\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Visual Micro\.Motion_Engine_at90usb1287.vsarduino.h">
-      <SubType>compile</SubType>
-    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

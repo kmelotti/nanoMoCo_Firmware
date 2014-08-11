@@ -58,6 +58,8 @@ void serialComplexPlan(byte* buf);
 #include "C:\Program Files (x86)\Arduino\hardware\DynamicPerception\avr\variants\at90usb128X\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\DynamicPerception\avr\cores\AT90USB\arduino.h"
 #include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\Motion_Engine_at90usb1287.ino"
+#include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\OMMotor.cpp"
+#include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\OMMotor.h"
 #include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\OM_Camera_Control.ino"
 #include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\OM_ControlCycle.ino"
 #include "C:\Users\Kevin Melotti\Documents\Arduino\nanoMoCo_Firmware\Firmware\Motion_Engine_at90usb1287\OM_Debug.ino"

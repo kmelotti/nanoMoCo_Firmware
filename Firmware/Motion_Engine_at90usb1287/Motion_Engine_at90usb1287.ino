@@ -137,6 +137,10 @@ unsigned long max_time = 0;
  // default device name, exactly 15 characters + null terminator
 byte device_name[] = "DEFAULT        ";
 
+
+ // default node to use (Hardware Serial = 1; AltSoftSerial = 2)
+byte node =1;
+
  /*  state transitions
  
   ST_BLOCK - do not allow any action to occur (some event is in process, block the state engine)
@@ -159,7 +163,7 @@ unsigned long time = 0;
  // initialize core objects
 OMCamera     Camera = OMCamera();
 OMMotor      Motor  = OMMotor();
-OMMoCoNode   Node   = OMMoCoNode(Serial, device_address, SERIAL_VERSION, (char*) SERIAL_TYPE);
+OMMoCoNode   Node   = OMMoCoNode(&Serial, device_address, SERIAL_VERSION, (char*) SERIAL_TYPE);
 OMComHandler_AT90USB ComMgr = OMComHandler_AT90USB();
     // there are 6 possible states in 
     // our engine (0-5)
@@ -178,7 +182,7 @@ int incomingByte = 0;
 
 
 AltSoftSerial altSerial;
-//OMMoCoNode   Node2   = OMMoCoNode(altSerial, device_address, SERIAL_VERSION, (char*) SERIAL_TYPE);
+OMMoCoNode   Node2   = OMMoCoNode(&altSerial, device_address, SERIAL_VERSION, (char*) SERIAL_TYPE);
 
 
 char inData[255]; // Allocate some space for the string
@@ -245,21 +249,23 @@ void setup() {
 
   // setup MoCoBus Node object
  Node.address(device_address);
- Node.setHandler(serCommandHandler);
+ Node.setHandler(serNode1Handler);
  Node.setBCastHandler(serBroadcastHandler);
+ Node.setSoftSerial(false);
  
   // setup MoCoBus Node object for bluetooth
-/*
+
  Node2.address(device_address);
- Node2.setHandler(serCommandHandler);
+ Node2.setHandler(serNode2Handler);
  Node2.setBCastHandler(serBroadcastHandler);
-*/
+ Node2.setSoftSerial(true);
+
  
  
   // Listen for address change
  Node.addressCallback(changeNodeAddr);
  
- //Node2.addressCallback(changeNodeAddr);
+ Node2.addressCallback(changeNodeAddr);
  
   
   // defaults for motor
@@ -289,8 +295,13 @@ void loop() {
 
    // check to see if we have any commands waiting      
   Node.check();
-  //Node2.check();
-  
+  Node2.check();
+  /*
+  int x = 0;
+  x = Node2.getPacket();
+  if ( x > 0)
+  USBSerial.println(x);
+  /*
    while(USBSerial.available() > 0) // Don't read unless
    {
        inChar1 = USBSerial.read(); // Read a character
@@ -312,6 +323,7 @@ void loop() {
        index++;
 
    }
+   */
    if ((millis()-time) > 500)
    {   
      for (int i = 0; i < index; i++)
@@ -325,7 +337,8 @@ void loop() {
      a++;
      if (a >=126)
        a=32;
-     USBSerial.println(a);
+    // Node2.response(true, a);
+     USBSerial.println("a");
      index = 0;
    }
    
